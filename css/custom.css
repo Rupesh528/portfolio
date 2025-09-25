@@ -1,0 +1,359 @@
+/** ADD YOUR AWESOME CODES HERE **/
+
+/* Improve hover effect for Coding Profiles cards */
+#coding-profiles .post-box {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 8px;
+}
+
+#coding-profiles .post-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+#coding-profiles .post-thumb img {
+  filter: none;
+  transition: transform 0.25s ease;
+}
+
+#coding-profiles .post-box:hover .post-thumb img {
+  transform: scale(1.05);
+}
+
+/* Remove dark overlay/shade on hover (template adds it via ::before) */
+#coding-profiles .post-thumb::before {
+  background: transparent !important;
+  opacity: 0 !important;
+  transform: none !important;
+}
+
+#coding-profiles .post-box:hover .post-thumb::before {
+  opacity: 0 !important;
+  transform: none !important;
+}
+
+/* Tidy up card spacing in coding profiles */
+#coding-profiles .post-box {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+#coding-profiles .post-info {
+  margin-top: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Constrain About text width */
+#about .message-box p {
+  max-width: 700px;
+}
+
+/* Constrain hero intro width */
+#home .heading h1,
+#home .heading p {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Equal height and animations for Coding Profiles */
+#coding-profiles .post-box,
+#coding-profiles .post-thumb,
+#coding-profiles .post-info {
+  height: 100%;
+}
+
+#coding-profiles .row > [class*="col-"] {
+  display: flex;
+}
+
+#coding-profiles .post-box {
+  display: flex;
+  flex-direction: column;
+}
+
+#coding-profiles .post-thumb {
+  flex: 0 0 auto;
+}
+
+#coding-profiles .post-info {
+  flex: 1 1 auto;
+}
+
+/* Animated gradient border on hover */
+#coding-profiles .post-box {
+  position: relative;
+  overflow: hidden;
+}
+
+#coding-profiles .post-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #6a5acd, #00c6ff, #00e6a8);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+#coding-profiles .post-box:hover::after {
+  opacity: 1;
+}
+
+/* Contact cards design */
+.contact-cards .contact-card {
+  display: block;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #333333;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-cards .contact-card i {
+  font-size: 36px;
+  margin-bottom: 12px;
+  color: #6a5acd;
+}
+
+.contact-cards .contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Modern profile cards */
+#coding-profiles .profile-card {
+  display: block;
+  height: 100%;
+  padding: 28px 20px;
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 1)
+  );
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  text-decoration: none;
+  color: #1f2d3d;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  min-height: 230px;
+}
+
+#coding-profiles .profile-card::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(106, 90, 205, 0.18),
+      transparent 40%
+    ),
+    radial-gradient(circle at 70% 70%, rgba(0, 198, 255, 0.18), transparent 40%);
+  transform: rotate(8deg);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.7;
+}
+
+#coding-profiles .profile-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
+#coding-profiles .profile-card:hover::before {
+  transform: rotate(0deg) scale(1.02);
+  opacity: 1;
+}
+
+.profile-logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 14px auto;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.profile-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.profile-sub {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+/* Provider-specific logo images */
+.profile-logo.leetcode {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png");
+}
+.profile-logo.codechef {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/1b/CodeChef_new_logo.svg");
+}
+.profile-logo.codeforces {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/37/Codeforces_logo.svg");
+}
+.profile-logo.github {
+  background-image: url("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png");
+}
+
+/* Override to use local images for CF/CC (place files in uploads/) */
+.profile-logo.codeforces {
+  background-image: url("../uploads/codeforces.png");
+}
+.profile-logo.codechef {
+  background-image: url("../uploads/codechef.png");
+}
+
+/* Brand text in navbar */
+.brand-text {
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+/* Hero boxed text */
+/* removed hero card styles per latest request */
+
+/* About image sizing */
+.right-box-pro img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Remove decorative offset background behind about image */
+.right-box-pro::before {
+  display: none !important;
+}
+
+/* Make the about image container fit the image (remove extra box feel) */
+.right-box-pro {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  display: inline-block;
+}
+
+/* Skills chips and cards */
+.skill-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 18px 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.1);
+}
+
+.skill-title {
+  margin: 0 0 10px 0;
+  font-weight: 800;
+}
+
+.skill-chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-chips li {
+  display: inline-block;
+  margin: 6px 6px 0 0;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  background: linear-gradient(
+    135deg,
+    rgba(106, 90, 205, 0.12),
+    rgba(0, 198, 255, 0.12)
+  );
+  color: #1f2d3d;
+  border: 1px solid rgba(106, 90, 205, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.skill-chips li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(
+    135deg,
+    rgba(106, 90, 205, 0.18),
+    rgba(0, 198, 255, 0.18)
+  );
+}
+
+/* Projects section - card glow & accent */
+#projects .services-inner-box {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#projects .services-inner-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.12);
+}
+
+#projects .ser-icon {
+  background: linear-gradient(135deg, #6a5acd, #00c6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#projects h2 {
+  font-weight: 800;
+}
+
+.contact-cards .contact-card h4 {
+  margin: 10px 0 6px;
+}
+
+.contact-cards .contact-card p {
+  margin: 0;
+}
+
+/* Highlight GitHub links in Projects */
+#projects a[href*="github.com"] {
+  position: relative;
+  font-weight: 700;
+  color: #24292e;
+}
+
+#projects a[href*="github.com"]::after {
+  content: "\f09b"; /* FontAwesome GitHub icon */
+  font-family: FontAwesome;
+  margin-left: 6px;
+}
+
+#projects a[href*="github.com"]:hover {
+  color: #0366d6;
+  text-decoration: underline;
+}
